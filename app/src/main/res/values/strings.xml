@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">IntroSliderApp</string>
+    <string name="slide_1_title">Find Institute</string>
+    <string name="slide_1_description">Explore your city and find the institution that can change your life.</string>
+    <string name="slide_2_title">Rating and Reviews</string>
+    <string name="slide_2_description">Get honest and realtime rating and reviews about these coaching institutes, away from their marketing propaganda</string>
+    <string name="slide_3_title">Give tests and Quizes</string>
+    <string name="slide_3_description">Measure your preparedness by appearing for 100+ online tests on various subjects.</string>
+    <string name="slide_4_title">Chat with institutions</string>
+    <string name="slide_4_description">Talk to the institutions and chat with them live.</string>
+    <string name="slide_5_text">The one stop solution to al your doubts is here.......</string>
+    <string name="skip_button_text">SKIP</string>
+    <string name="next_button_text">NEXT</string>
+    <string name="my_preference">com.example.introsliderapp.MyPref</string>
+    <string name="my_preference_key">com.example.introsliderapp.MyPrefKey</string>
+    <string name="textView_main_activity">Welcome to main activity</string>
+    <string name="load_slides_button_main_activity">LOAD SLIDES</string>
+</resources>

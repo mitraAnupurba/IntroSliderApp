@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_3">
+
+    <!-- first slide icon -->
+    <ImageView
+        android:id="@+id/icon_first_slide"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/building_first_slide" />
+
+    <!-- first slide title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/slide_1_title"
+        android:textColor="@android:color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/icon_first_slide"
+        android:layout_marginTop="12dp"
+        android:id="@+id/title_first_slide"/>
+
+    <!-- first slide text -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/slide_1_description"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/title_first_slide"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="40sp"
+        android:layout_marginLeft="40sp"
+        android:id="@+id/text_first_slide"/>
+
+
+
+</RelativeLayout>
