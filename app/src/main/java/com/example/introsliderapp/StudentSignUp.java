@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
     private EditText phoneNumberStudentSignUp,instNameStudentSignUp;
     private TextView selectExamTextViewStudentSignUp,statusTextViewStudentSignUp,parentTextViewStudentSignUp,dobStudentSignUp;
     private RadioGroup statusRadioStudentSignUp,parentRadioStudentSignUp;
+    private RadioButton yesRadioButton,noRadioButton,justEnteredRadioButton,appearingRadioButton,passedOutRadioButton;
     private Button studentSignUpButton;
 
     //datepicker variable :
@@ -51,7 +53,7 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
     //database variables:
     private FirebaseDatabase mDatabase;
     private DatabaseReference mRef;
-    private ValueEventListener valueEventListener;
+
 
 
     @Override
@@ -66,7 +68,7 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
         initDBObjects();
 
 
-        mRef.addValueEventListener(valueEventListener);
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.exams, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -162,18 +164,7 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
 
         mDatabase = FirebaseDatabase.getInstance();
         mRef = mDatabase.getReference("Users");
-        valueEventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Student student = dataSnapshot.getValue(Student.class);
-                Log.d(TAG,"onChildAdded : Name "+ dataSnapshot.getKey());
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        };
     }
 
 
@@ -191,6 +182,13 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
         statusRadioStudentSignUp = this.findViewById(R.id.status_radio_group);
         parentRadioStudentSignUp = this.findViewById(R.id.yes_no_radio_group);
 
+        //initialising radio button:
+        yesRadioButton = this.findViewById(R.id.yes_radio_button);
+        noRadioButton = this.findViewById(R.id.no_radio_button);
+        justEnteredRadioButton = this.findViewById(R.id.just_entered_radio_button);
+        appearingRadioButton = this.findViewById(R.id.appearing_radio_button);
+        passedOutRadioButton = this.findViewById(R.id.passed_out_radio_button);
+
         //initialising edittext's:
         userNameStudentSignUp = this.findViewById(R.id.user_name_sign_up_student);
         emailStudentSignUp = this.findViewById(R.id.email_address_sign_up_student);
@@ -204,16 +202,12 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mRef.removeEventListener(valueEventListener);
-    }
+
 
     @Override
     public void onClick(View v) {
         String userName, email, password, confirmPassword,dob,instName, status,exam;
-        String key;
+
         boolean parentAccount;
         //Date dob;
         long phNumber;
@@ -230,12 +224,12 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
 
 
 
+
         try{
 
 
-            //connecting with database:
-            key = mRef.push().getKey();
-            Log.d(TAG,key);
+
+
             if(userName.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()
             ||instName.isEmpty() || exam.isEmpty() || status.isEmpty() || dob.isEmpty() || phoneNumberStudentSignUp.getText().toString().isEmpty()){
                 throw new SignUpException("fields empty");
@@ -252,9 +246,30 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
                 else{
                     parentAccount = false;
                 }
+
                 phNumber =Long.parseLong(phoneNumberStudentSignUp.getText().toString());
-                Student student = new Student(userName,password,email,dob,phNumber,instName,status,exam,parentAccount);
-                 mRef.child("student").child(key).setValue(student);
+                final Student student = new Student(userName,password,email,dob,phNumber,instName,status,exam,parentAccount);
+                final DatabaseReference emailRef = mRef.child("student");
+
+                emailRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.child(student.getEmailAddressStudent()).exists()){
+                                Toast.makeText(StudentSignUp.this, "USER EXISTS< EMAIL MUST BE UNIQUE", Toast.LENGTH_SHORT).show();
+                            }
+                            else{
+                                emailRef.child(student.getEmailAddressStudent()).setValue(student);
+                                Toast.makeText(StudentSignUp.this, "USER REGESTRATION SUCCESSFUL", Toast.LENGTH_SHORT).show();
+                            }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
                  startActivity(new Intent(StudentSignUp.this, PhoneEmailVerification.class));
 
 
@@ -278,6 +293,9 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
             dobStudentSignUp.setText("");
             phoneNumberStudentSignUp.setText("");
             parentTextViewStudentSignUp.setText("Does your parent have an account here?");
+            parentRadioStudentSignUp.clearCheck();
+            statusRadioStudentSignUp.clearCheck();
+
         }
 
 

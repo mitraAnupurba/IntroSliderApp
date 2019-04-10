@@ -52,14 +52,14 @@
         app:layout_constraintVertical_bias="0.045" />
 
     <EditText
-        android:id="@+id/student_login_user_name_editText"
+        android:id="@+id/student_login_email_address_editText"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
         android:background="@android:color/transparent"
 
-        android:hint="Enter User Name"
+        android:hint="Enter Email Address"
         android:textColorHint="@color/color_white"
         android:textSize="14sp"
         android:textStyle="italic"
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintTop_toBottomOf="@+id/student_login_user_name_editText"
+        app:layout_constraintTop_toBottomOf="@+id/student_login_email_address_editText"
         app:layout_constraintVertical_bias="0.055" />
 
     <Button
