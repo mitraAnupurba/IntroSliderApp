@@ -81,6 +81,7 @@
         android:drawableRight="@drawable/eyepassword"
         android:hint="Enter Password"
         android:textColorHint="@color/color_white"
+        android:inputType="textPassword"
         android:textSize="14sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -112,21 +113,24 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
         android:id="@+id/forgot_password_textView"
-        android:text="Don't remember password?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="140dp"
         android:clickable="true"
         android:onClick="loadForgetPassword"
-        android:textColor="@color/color_white"
-        android:textStyle="italic"
-        android:textSize="14sp"
+        android:text="Don't remember password?"
         android:textAlignment="center"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        android:textColor="@color/color_white"
+        android:textSize="14sp"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left"
         app:layout_constraintTop_toBottomOf="@+id/button_student_login"
-        />
+        app:layout_constraintVertical_bias="1.0" />
 
     <View
         android:id="@+id/footer_line_view"
@@ -134,24 +138,26 @@
         android:layout_height="1dp"
         android:layout_marginBottom="80dp"
         android:background="@color/color_white"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline_right"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline_left" />
 
     <TextView
-        android:layout_height="wrap_content"
+        android:id="@+id/student_sign_up_textview"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:clickable="true"
+
         android:text="Dont have an acount?Sign up"
-        android:textStyle="italic"
         android:textAlignment="center"
         android:textColor="@color/color_white"
-        android:clickable="true"
-        android:onClick="loadRegistration"
-        app:layout_constraintStart_toStartOf="@+id/guideline_left"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/footer_line_view"
-        />
+        app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="@+id/guideline_left" />
 
 </android.support.constraint.ConstraintLayout>

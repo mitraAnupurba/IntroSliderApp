@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/custombackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_height="fill_parent"
+            android:layout_width="fill_parent"
+            android:orientation="vertical"
+
+            >
+
+            <ImageView
+                android:id="@+id/app_logo_imageView"
+                android:layout_width="126dp"
+                android:layout_height="94dp"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/protiplogo"
+                android:layout_gravity="center"
+                android:scaleType="center"
+                />
+
+            <TextView
+                android:id="@+id/sign_up_as_student_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIGN UP AS STUDENT"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                android:layout_marginTop="14dp"
+                />
+
+            <EditText
+                android:id="@+id/user_name_sign_up_student"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Enter User Name..."
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                />
+
+
+            <EditText
+                android:id="@+id/email_address_sign_up_student"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Enter Email Address..."
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:inputType="textEmailAddress"
+
+                />
+
+
+
+
+            <EditText
+                android:id="@+id/password_sign_up_student"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Enter Password..."
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:inputType="textPassword"
+                />
+
+            <EditText
+                android:id="@+id/confirm_password_sign_up_student"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Confirm Password..."
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:inputType="textPassword"
+                />
+
+            <TextView
+                android:id="@+id/dob_sign_up_student"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Date of Birth..."
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:inputType="date">
+
+
+            </TextView>
+
+
+            <EditText
+                android:id="@+id/ph_no_sign_up_student"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Phone Number..."
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:inputType="number"
+                />
+
+
+
+            <EditText
+                android:id="@+id/inst_name_sign_up_student"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Enter your Institute Name..."
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:inputType="text"
+                />
+
+
+
+            <TextView
+                android:id="@+id/exam_preparing_sign_up_student_textView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="The exam you are preparing for is..."
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:inputType="text"
+                />
+
+
+
+
+
+                <Spinner
+                    android:id="@+id/select_exam_spinner_sign_up_student"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    />
+
+
+            <TextView
+                android:id="@+id/status_sign_up_student_textView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Enter your Status..."
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:inputType="text"
+                />
+
+
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/status_radio_group"
+                android:gravity="center"
+
+                >
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/passed_out_radio_button"
+                    android:text="PASSED OUT"
+                    android:textSize="16dp"
+                    android:checked="false"
+                    android:textColor="@android:color/white"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/appearing_radio_button"
+                    android:text="APPEARING"
+                    android:textSize="16dp"
+                    android:checked="false"
+                    android:textColor="@android:color/white"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/just_entered_radio_button"
+                    android:text="JUST ENTERED"
+                    android:textSize="16dp"
+                    android:checked="false"
+                    android:textColor="@android:color/white"/>
+
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/parent_account_textView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="8dp"
+                android:background="@android:color/transparent"
+                android:hint="Does your parent have an account here?"
+                android:textColorHint="@color/color_white"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:inputType="text"
+                />
+
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:orientation="horizontal"
+                android:id="@+id/yes_no_radio_group"
+                android:gravity="center"
+
+                >
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/yes_radio_button"
+                    android:text="YES"
+                    android:textSize="16dp"
+                    android:layout_marginRight="24dp"
+                    android:checked="false"
+                    android:textColor="@android:color/white"/>
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/no_radio_button"
+                    android:text="NO"
+                    android:textSize="16dp"
+                    android:checked="false"
+                    android:textColor="@android:color/white"/>
+
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/student_sign_up_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custombutton"
+                android:layout_marginTop="14dp"
+                android:text="SIGN UP AS STUDENT"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:textAlignment="center"
+                />
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

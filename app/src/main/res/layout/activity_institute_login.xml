@@ -80,6 +80,7 @@
         android:background="@android:color/transparent"
         android:drawableRight="@drawable/eyepassword"
         android:hint="Enter Password"
+        android:inputType="textPassword"
         android:textColorHint="@color/color_white"
         android:textSize="14sp"
         android:textStyle="italic"

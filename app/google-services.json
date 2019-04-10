@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "93929740941",
+    "firebase_url": "https://introsliderapp.firebaseio.com",
+    "project_id": "introsliderapp",
+    "storage_bucket": "introsliderapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93929740941:android:27b70cffd542fe93",
+        "android_client_info": {
+          "package_name": "com.example.introsliderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93929740941-714umln7p62ahq846tqs4vq0m5lqo4ti.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.introsliderapp",
+            "certificate_hash": "6d92cef3bb1494fcf46fb5657a96352a4b7ce530"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9QX0fm3oAzR3nFJKNfUlFaD2L9MAkr5k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "93929740941-5657iq6sjk50fobun6j3umlscrp43mar.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

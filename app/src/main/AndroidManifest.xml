@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreenActivity" android:noHistory="true">
-
+        <activity android:name=".PhoneEmailVerification"></activity>
+        <activity android:name=".ParentSignUp" />
+        <activity android:name=".StudentAccount" />
+        <activity android:name=".StudentSignUp" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:label="@string/app_name"
+            android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
@@ -45,9 +51,7 @@
             android:name=".FindInstituteActivity"
             android:parentActivityName=".WelcomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".WelcomeActivity">
-
-        </activity>
+        <activity android:name=".WelcomeActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

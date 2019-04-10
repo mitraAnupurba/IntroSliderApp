@@ -15,4 +15,20 @@
     <string name="my_preference_key">com.example.introsliderapp.MyPrefKey</string>
     <string name="textView_main_activity">Welcome to main activity</string>
     <string name="load_slides_button_main_activity">LOAD SLIDES</string>
+
+    <string-array name="exams">
+        <item>IIT-JEE</item>
+        <item>medical entrance</item>
+        <item>GATE/IES</item>
+        <item>college placements</item>
+        <item>medical post graduate exams</item>
+        <item>JRF/NET</item>
+        <item>Civil Services</item>
+        <item>Bank</item>
+        <item>Comerce</item>
+        <item>GRE/IELTS</item>
+        <item>MBA</item>
+
+
+    </string-array>
 </resources>
