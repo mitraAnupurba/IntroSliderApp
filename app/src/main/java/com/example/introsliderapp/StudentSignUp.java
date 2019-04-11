@@ -206,11 +206,11 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onClick(View v) {
-        String userName, email, password, confirmPassword,dob,instName, status,exam;
+        final String userName, email, password, confirmPassword,dob,instName, status,exam;
 
-        boolean parentAccount;
+       final  boolean parentAccount;
         //Date dob;
-        long phNumber;
+        final long phNumber;
 
         userName =  userNameStudentSignUp.getText().toString();
         email = emailStudentSignUp.getText().toString();
@@ -248,26 +248,32 @@ public class StudentSignUp extends AppCompatActivity implements AdapterView.OnIt
                 }
 
                 phNumber =Long.parseLong(phoneNumberStudentSignUp.getText().toString());
-                final Student student = new Student(userName,password,email,dob,phNumber,instName,status,exam,parentAccount);
+
                 final DatabaseReference emailRef = mRef.child("student");
 
-                emailRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                Student studentNew = new Student(userName,password,email,dob,phNumber,instName,status,exam,parentAccount);
+                emailRef.child(studentNew.getEmailAddressStudent()).setValue(studentNew);
+                Toast.makeText(StudentSignUp.this, "USER : Registration successful", Toast.LENGTH_SHORT).show();
+
+               /* emailRef.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            Student student = dataSnapshot.getValue(Student.class);
                             if(dataSnapshot.child(student.getEmailAddressStudent()).exists()){
-                                Toast.makeText(StudentSignUp.this, "USER EXISTS< EMAIL MUST BE UNIQUE", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(StudentSignUp.this, "USER EXISTS, EMAIL MUST BE UNIQUE", Toast.LENGTH_SHORT).show();
+
                             }
                             else{
-                                emailRef.child(student.getEmailAddressStudent()).setValue(student);
-                                Toast.makeText(StudentSignUp.this, "USER REGESTRATION SUCCESSFUL", Toast.LENGTH_SHORT).show();
-                            }
-                    }
 
+
+                            }
+
+                    }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                        Toast.makeText(StudentSignUp.this, "DATABASE ERROR", Toast.LENGTH_SHORT).show();
                     }
-                });
+                });*/
 
 
                  startActivity(new Intent(StudentSignUp.this, PhoneEmailVerification.class));
